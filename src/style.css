@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+.section{
+  height: 700px;
+  width: 500px;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  margin: 20px auto;
+  font-size: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.section--title{
+  margin: 0;
+}
+.section--text{
+  margin-bottom: 25px;
+  font-size: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.section button {
+ border-radius: 15px;
+ width: 140px;
+ height: 40px;
+ background-color: #4D5B9E;
+ color: white;
+ border: none;
+}
+
+/* Trivia Page */
+.main{
+  height: auto;
+  width: 100%;
+  /* min-width: 400px; */
+  padding-bottom: 20px; 
+  border-bottom: solid 2px rgb(227, 227, 227);
+  margin-left: 10px;
+  margin-bottom: 20px;
+  /* overflow: auto; */
+  /* border: solid 2px red; */
+}
+
+.divContainer{
+  display: flex;
+  flex-flow: column;
+  /* border: solid 2px red; */
+  width: 800px;
+}
+
+
+.divContainer h1{
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  /* color: blue; */
+}
+
+.divContainer2{
+  display: flex;
+}
+
+button {
+  background-color: white
+}
+
+.divContainer2 button{
+  border-radius: 10px;
+  margin-right: 10px;
+  overflow: auto;
+  /* width: 100%; may keep it like this*/
+  overflow: auto;
+  font-size: 1rem;
+  color: #293264;
+  border: 1.5px solid #4D5B9E;
+}
+
+/* check answers button and question + choices container */
+.mainContentDivider{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 70px;
+  /* border: solid 2px red; */
+}
+
+.mainContentDivider > button{
+margin-top: 10px;
+width: 140px;
+height: 40px;
+border-radius: 10px;
+background-color: #4D5B9E;
+color: white;
+border: none;
+}
+
+.mainContentDivider > button:hover{
+  /* background-color: red; */
+  height: 45px;
+  width: 145px;
+}
+
+
+.scoreContainer{
+  display: flex;
+  align-items: center;
+}
+
+.scoreContainer h3{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.scoreContainer button{
+width: 140px;
+height: 40px;
+border-radius: 7px;
+margin-left: 20px;
+background-color: #4D5B9E;
+border: none;
+color: white;
+}
+
+.selected{
+background-color: #D6DBF5;
+
+}
+
+#correct-selected{
+  background-color: #94D7A2;
+  border: none;
+}
+
+#wrong-selected{
+  background-color: #F8BCBC;
+  opacity: .5;
+  border: none
+}
+#correct-not-selected{
+  background-color: #94D7A2;
+  border: none;
+}
+
+#not-selected{
+  background-color: #F5F7FB;
+  border: 1px solid grey;
+  opacity: .5;
+}
+
+*:disabled{
+  color:#293264;
+  border: 1px solid grey;
+}
+
+button{
+  cursor: pointer;
+}
