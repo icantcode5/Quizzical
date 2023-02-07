@@ -2,9 +2,10 @@
   box-sizing: border-box;
 }
 
+/* Title Page */
 .section{
-  height: 700px;
-  width: 500px;
+  min-height: 700px;
+  max-width: 500px;
   /* border: 2px solid red; */
   display: flex;
   justify-content: center;
@@ -41,15 +42,17 @@
   border-bottom: solid 2px rgb(227, 227, 227);
   margin-left: 10px;
   margin-bottom: 20px;
+  margin-right: 10px;
   /* overflow: auto; */
   /* border: solid 2px red; */
 }
 
+/* container for question h1 and choices container */
 .divContainer{
   display: flex;
   flex-flow: column;
   /* border: solid 2px red; */
-  width: 800px;
+  max-width: 800px;
 }
 
 
@@ -62,6 +65,8 @@
 
 .divContainer2{
   display: flex;
+  /* border: solid 2px red; */
+  /* margin-right: 20px; */
 }
 
 button {
@@ -77,6 +82,7 @@ button {
   font-size: 1rem;
   color: #293264;
   border: 1.5px solid #4D5B9E;
+  padding: 5px;
 }
 
 /* check answers button and question + choices container */
@@ -84,7 +90,7 @@ button {
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 30px;
   /* border: solid 2px red; */
 }
 
@@ -157,4 +163,42 @@ background-color: #D6DBF5;
 
 button{
   cursor: pointer;
+}
+
+
+@media (max-width: 850px){
+  .mainContentDivider{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 480px){
+ 
+
+  .scoreContainer {
+    flex-flow: column;
+    align-items: center;
+  }
+  
+}
+
+@media (max-width: 450px){
+  .divContainer2{
+    flex-flow: column;
+    gap: 10px;
+  }
+  .divContainer2 button{
+  padding: 7px;
+}
+
+.divContainer h1{
+  font-size: 1rem;
+}
+
+  .mainContentDivider{
+    margin-top: 30px;
+  }
+
+
 }
