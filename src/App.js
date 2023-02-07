@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import TitlePage from "./components/TitlePage"
 import TriviaPage from "./components/TriviaPage"
 import Button from "./components/Button"
@@ -53,6 +53,11 @@ function App() {
 			})
 			.catch((err) => console.log("error with state setting"))
 	}, [playAgain])
+
+	//mobile feature
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [checkAnswers])
 
 	function handleStartQuiz() {
 		setIsQuizStarted(true)
