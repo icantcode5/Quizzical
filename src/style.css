@@ -180,6 +180,9 @@ button{
     flex-flow: column;
     align-items: center;
   }
+  .section--text{
+    text-align: center;
+  }
   
 }
 
