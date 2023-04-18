@@ -5,7 +5,6 @@ export default function TriviaPage(props) {
 	// console.log(props.id)
 
 	let answers = props.choices.map((obj, i) => {
-		console.log(obj.isHeld)
 		let id = ""
 
 		if (props.checkAnswers) {
@@ -29,10 +28,12 @@ export default function TriviaPage(props) {
 		return (
 			<button
 				key={i}
+				//prettier-ignore
 				onClick={() => props.handleClicked(obj.option, props.id)}
 				id={id}
 				className={obj.isHeld ? "selected" : ""}
-				disabled={props.checkAnswers && true}>
+				disabled={props.checkAnswers && true}
+			>
 				{obj.option}
 			</button>
 		)

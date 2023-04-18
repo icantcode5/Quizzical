@@ -18,8 +18,6 @@ function App() {
 		choices: [],
 	})
 
-	console.log(decode)
-
 	//helper function to combine correct answer and incorrect answers into one array and then shuffle the array in place.
 	function combineAndShuffleArray(obj) {
 		return obj.incorrect_answers
@@ -28,6 +26,7 @@ function App() {
 				return {
 					option: decode(value),
 					isHeld: false,
+					correctAns: obj.correct_answer,
 				}
 			})
 			.map((value) => ({ ...value, sort: Math.random() }))
@@ -41,10 +40,11 @@ function App() {
 			.then((data) => {
 				setTriviaArray((prevObj) => {
 					return data.results.map((obj) => {
+						console.log(obj.correct_answer)
 						return {
 							...prevObj,
 							question: decode(obj.question),
-							correctAnswer: obj.correct_answer,
+							correctAnswer: decode(obj.correct_answer),
 							id: nanoid(),
 							choices: combineAndShuffleArray(obj),
 						}
@@ -64,8 +64,6 @@ function App() {
 	}
 
 	function handleClicked(btnOption, objId) {
-		console.log(objId)
-
 		setTriviaArray((prevArray) => {
 			return prevArray.map((obj) => {
 				if (obj.id === objId) {
@@ -92,19 +90,18 @@ function App() {
 		})
 	}
 
-	function handleCheckAnswers(correctAnswers) {
-		let correct = 0
-
+	function handleCheckAnswers() {
+		let count = 0
 		triviaArray.forEach((obj) => {
 			obj.choices.forEach((obj2) => {
-				if (correctAnswers.includes(obj2.option) && obj2.isHeld) {
-					correct += 1
+				if (obj2.option === obj2.correctAns && obj2.isHeld) {
+					count += 1
 				}
 			})
 		})
 
+		setIsCorrect(count)
 		setCheckAnswers(true)
-		setIsCorrect(correct)
 	}
 
 	function handlePlayAgain() {
@@ -145,7 +142,7 @@ function App() {
 					) : (
 						<Button
 							handleCheckAnswers={handleCheckAnswers}
-							correctAnswer={triviaArray.map((el) => el.correctAnswer)} //can pass correct answer instead of array of correct answers
+							correctAnswers={triviaArray.map((el) => el.correctAnswer)} //can pass correct answer instead of array of correct answers
 						/>
 					)}
 				</div>
